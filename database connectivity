@@ -1,0 +1,11 @@
+import mysql.connector;
+
+mydb= mysql.connector.connect(user="root", password="root123", host ="localhost", port ="3306", database ="test" );
+print(type(mydb));
+
+if mydb.is_connected():
+    mycursor = mydb.cursor();
+    mycursor.execute("select * from sample_users");
+    data = mycursor.fetchall();
+for col in data:
+        print(col);
